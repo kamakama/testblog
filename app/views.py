@@ -74,7 +74,7 @@ def login():
             return redirect(next or url_for('user', name=username))
         flash('Invalid username. Try again')
     return render_template('login.html', title='Sign In', form=form)
-    
+
 
 @app.route('/user/<name>')
 @login_required
@@ -88,8 +88,8 @@ def user(name):
         {'author': user, 'body': 'Test post #2'}
     ]
     return render_template('user.html', title=name, user=user, posts=posts)
-    
-    
+
+
 @app.route('/upload', methods=['GET', 'POST'])
 @login_required
 def upload():
@@ -126,7 +126,7 @@ def edit():
     else:
         form.about_me.data = g.user.about_me
     return render_template('edit.html', form=form)
-    
+
 @app.before_request
 def before_request():
     g.user = current_user
@@ -135,8 +135,13 @@ def before_request():
         db.session.add(g.user)
         db.session.commit()
 
+@app.route('/userlist')
+@login_required
+def userlist():
+    users = User.query.order_by(User.username)
+    return render_template('userlist.html', users=users)
+
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
-    
