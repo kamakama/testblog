@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="" method=post>
+      <h3>Create new user accont</h3>
+      {{ form.csrf_token }}
+      <div>{{ form.username(size=20, required=True, placeholder="Enter username") }}</div>
+      <div>{{ form.password(size=20, required=True, placeholder="Enter password") }}</div>
+      <div>{{ form.confirm(size=20, required=True, placeholder="Reenter password") }}</div>
+      <div>{{ form.email(size=20, placeholder="Enter email (optional)") }}</div>
+      <div><button type="submit">Signup</button></div>
+    </form>
+{% endblock %}
