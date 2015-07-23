@@ -9,8 +9,8 @@
   </head>
   <body>
     <div>hello~:
-      <a href="/index">Home</a> |
-      <a href="/register">Register</a> |
+      <a href="{{ url_for('index') }}">Home</a> |
+      <a href="{{ url_for('register') }}">Register</a> |
       {%- if g.user.is_authenticated() %}
       <a href="{{ url_for('user', name=g.user.username) }}">My profile</a> |
       <a href="{{ url_for('upload') }}">Upload</a> |

@@ -3,7 +3,7 @@
     {% for user in users %}
     <table>
       <tr>
-        <td rowspan=2><img src="/static/avatars/{% if user.avatar %}{{ user.avatar }}{% else %}default.jpg{% endif %}" width="50px"></td>
+        <td rowspan=2><img src="static/avatars/{% if user.avatar %}{{ user.avatar }}{% else %}default.jpg{% endif %}" width="50px"></td>
         <td><a href="{{ url_for('user', name=user.username) }}">{{ user.username }}</a></td>
       </tr>
       <tr>

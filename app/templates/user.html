@@ -2,7 +2,7 @@
 {% block content %}
     <table>
       <tr valign="top">
-        <td><img src="/static/avatars/{% if user.avatar %}{{ user.avatar }}{% else %}default.jpg{% endif %}" width="128px"></td>
+        <td><img src="../static/avatars/{% if user.avatar %}{{ user.avatar }}{% else %}default.jpg{% endif %}" width="128px"></td>
         <td>
         <h1>User: {{user.username}}</h1>
           {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}

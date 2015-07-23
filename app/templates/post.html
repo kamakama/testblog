@@ -1,6 +1,6 @@
     <table>
       <tr valign="top">
-        <td><img src="/static/avatars/{% if user.avatar %}{{ user.avatar }}{% else %}default.jpg{% endif %}" width="50px"></td>
+        <td><img src="../static/avatars/{% if user.avatar %}{{ user.avatar }}{% else %}default.jpg{% endif %}" width="50px"></td>
         <td><i>{{ post.author.nickname }} says:</i><br>{{ post.body }}</td>
       </tr>
     </table>
